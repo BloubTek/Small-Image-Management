@@ -12,4 +12,5 @@ urlpatterns = [
     path('prev', views.prevPic),
     path('next', views.nextPic),
     path('', views.home),
+    path('/home', views.home),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
