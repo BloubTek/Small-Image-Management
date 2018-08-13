@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static "css/base.css" %}" type="text/css">
+{% endblock%}
+
+{% block content %}
+<a href='/'>Home</a>
+<div class="basics">
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div width="100%">
+      <button type="submit" id="buttonHolder">Upload</button>
+    </div>
+  </form>
+</div>
+{% if uploaded_file_url %}
+<p>{{ uploaded_file_url }}</p>
+{% endif %}
+
+{% endblock %}

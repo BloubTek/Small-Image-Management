@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static "css/home.css" %}" type="text/css">
+{% endblock%}
+
+{% block content %}
+<table cellpadding="0px" cellspacing="0px" id="navBar">
+  <tr>
+    <td><a href='list'>Liste</a></td>
+    <td><a href='upload'>Upload</a></td>
+    <td><a href='picture/{{ idpic }}'>Viewer</a></td>
+  </tr>
+</table>
+{% endblock %}

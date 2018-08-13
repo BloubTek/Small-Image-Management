@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href='/'>Home</a>
+
+<table style="width:50%">
+    <tr>
+        <th>Date</th>
+        <th>Verified</th>
+        <th>Rejected</th>
+    </tr>
+
+    {% for image in object_list %}
+    <tr>
+      <td><a href="picture/{{ image.id }}" >{{image.date|date}}</a></td>
+      <td><a href="picture/{{ image.id }}" >{{image.verified}}</a></td>
+      <td><a href="picture/{{ image.id }}" >{{image.rejected}}</a></td>
+    </tr>
+    {% empty %}
+    <li>No pictures yet.</li>
+    {% endfor %}
+</table>
+{% endblock %}
